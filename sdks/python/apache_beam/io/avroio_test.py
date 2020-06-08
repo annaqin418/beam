@@ -244,7 +244,7 @@ class AvroBase(object):
     source = _create_avro_source(file_name, use_fastavro=self.use_fastavro)
     source_test_utils.assert_reentrant_reads_succeed((source, None, None))
 
-  def test_read_reantrant_with_splitting(self):
+  def test_read_reentrant_with_splitting(self):
     file_name = self._write_data()
     source = _create_avro_source(file_name, use_fastavro=self.use_fastavro)
     splits = [split for split in source.split(desired_bundle_size=100000)]
